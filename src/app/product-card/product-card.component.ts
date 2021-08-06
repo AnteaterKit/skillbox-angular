@@ -1,7 +1,6 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
-import {Product} from "../types/product";
 import {InCart} from "../types/inCart";
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-product-card',
@@ -9,11 +8,14 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
   styleUrls: ['./product-card.component.scss']
 })
 export class ProductCardComponent implements OnInit {
-
-  @Input() products: Product[] = [];
+  public productId?: number;
+  @Input() product: any;
   @Output() onClick = new EventEmitter<InCart>();
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private route: ActivatedRoute) {
+    this.productId = this.route.snapshot.params['id'];
+    this.product = this.route.snapshot.queryParams;
+  }
 
   ngOnInit(): void {
   }
