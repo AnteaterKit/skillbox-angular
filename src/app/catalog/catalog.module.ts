@@ -4,7 +4,7 @@ import { CatalogComponent } from './catalog.component';
 import { ProductCardModule } from "../product-card/product-card.module";
 import { DropDownListModule } from "../drop-down-list/drop-down-list.module";
 import { ToggleModule } from "../toggle/toggle.module";
-import { AppRoutingModule } from "../app-routing.module";
+import { CatalogRoutingModule } from './catalog.routing.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { AppRoutingModule } from "../app-routing.module";
     ProductCardModule,
     DropDownListModule,
     ToggleModule,
-    AppRoutingModule
+    CatalogRoutingModule
   ],
   exports: [
     CatalogComponent

@@ -12,7 +12,7 @@ export const routes: Routes = [
   },
   {
     path: 'catalog',
-    component: CatalogComponent
+    loadChildren: () => import("./catalog/catalog.module").then(m => m.CatalogModule)
     //data: { title: 'Каталог товаров' }
   },
   {

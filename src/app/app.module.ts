@@ -7,7 +7,6 @@ import { DropDownListModule } from "./drop-down-list/drop-down-list.module";
 import { ButtonModule } from "./button/button.module";
 import { ToggleModule } from "./toggle/toggle.module";
 import { DropDownMenuModule } from "./drop-down-menu/drop-down-menu.module";
-import { CatalogModule } from "./catalog/catalog.module";
 import localeRu from '@angular/common/locales/ru';
 import { registerLocaleData} from "@angular/common";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -29,7 +28,6 @@ registerLocaleData(localeRu);
     ButtonModule,
     ToggleModule,
     DropDownMenuModule,
-    CatalogModule,
     NgbModule,
     CartModule
   ],
