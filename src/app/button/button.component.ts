@@ -4,7 +4,7 @@ import {InCart} from "../types/inCart";
 
 @Component({
   selector: 'app-button',
-  template: '<button class="btn btn-success" (click)="addToCart(product)">Добавить в корзину</button>',
+  template: '<button class="btn btn-success" (click)="addToCart($event)">Добавить в корзину</button>',
   styles: []
 })
 export class ButtonComponent implements OnInit {
@@ -16,9 +16,10 @@ export class ButtonComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  addToCart(product: Product) {
+  addToCart($event: Event) {
+    $event.stopPropagation();
     let productInCart = new InCart();
-    productInCart.product = product;
+    productInCart.product = this.product;
     this.onClick.emit(productInCart)
   }
 }
